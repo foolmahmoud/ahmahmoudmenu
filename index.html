@@ -142,6 +142,67 @@ tbody tr:last-child td{border-bottom:none;}
   font-size:.85rem;font-weight:700;color:rgba(255,255,255,.7);
 }
 
+
+/* ── OFFERS ── */
+.offers-section{padding:20px 16px;}
+.offers-header{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:18px;padding-bottom:12px;
+  border-bottom:2px solid var(--gold);
+}
+.offers-badge{
+  background:linear-gradient(135deg,var(--red),var(--red2));
+  color:#fff;font-size:.7rem;font-weight:800;
+  padding:3px 10px;border-radius:20px;letter-spacing:.5px;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.85;transform:scale(1.05);}}
+.offer-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(193,18,31,.13),rgba(139,0,0,.08));
+  border:1px solid rgba(193,18,31,.35);
+  border-radius:16px;padding:16px;margin-bottom:14px;
+}
+.offer-card::before{
+  content:'';position:absolute;top:-40px;left:-40px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,160,23,.12),transparent 70%);
+  pointer-events:none;
+}
+.offer-tag{
+  display:inline-block;
+  background:var(--gold);color:#0D0D0D;
+  font-size:.62rem;font-weight:900;
+  padding:2px 9px;border-radius:20px;
+  margin-bottom:8px;letter-spacing:.5px;
+}
+.offer-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px;}
+.offer-desc{font-size:.72rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:10px;}
+
+.offer-choices{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.choice-pill{
+  background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);
+  color:var(--gold2);font-size:.78rem;font-weight:700;
+  padding:5px 12px;border-radius:20px;
+}
+.offer-includes{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
+.include-item{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.7);font-size:.75rem;font-weight:600;
+  padding:4px 10px;border-radius:12px;
+}
+.offer-price-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.offer-old-price{font-size:.75rem;color:rgba(255,255,255,.35);text-decoration:line-through;}
+.offer-new-price{
+  font-size:.95rem;font-weight:900;color:var(--gold2);
+  background:rgba(212,160,23,.1);padding:4px 12px;border-radius:10px;
+  border:1px solid rgba(212,160,23,.25);
+}
+.offer-saving{
+  font-size:.62rem;color:#4ade80;font-weight:700;
+  background:rgba(74,222,128,.1);padding:3px 8px;border-radius:8px;
+}
+
 /* ── FOOTER ── */
 .footer{
   text-align:center;padding:24px 20px 0;
@@ -172,16 +233,18 @@ tbody tr:last-child td{border-bottom:none;}
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="show('foul')">🫘 فول ومسبحة</div>
-  <div class="tab" onclick="show('fatte')">🥣 الفتة</div>
+  <div class="tab active" onclick="show('3altawle')">🍽️ على الطاولة</div>
   <div class="tab" onclick="show('terwi2a')">🍳 ترويقة بلدية</div>
-  <div class="tab" onclick="show('3aleb')">🥡 أصناف العلب</div>
+  <div class="tab" onclick="show('3aleb')">🥡 أصناف العلب take away</div>
   <div class="tab" onclick="show('mashroob')">🥤 مشروبات</div>
+  <div class="tab" onclick="show('3orod')">🔥 عروضات</div>
 </div>
 
-<!-- ── فول ومسبحة ── -->
-<div id="sec-foul" class="section active">
-  <div class="cat-hdr"><div class="cat-icon">🫘</div><div class="cat-name">الفول والمسبحة</div></div>
+<!-- ── على الطاولة ── -->
+<div id="sec-3altawle" class="section active">
+  <div class="cat-hdr"><div class="cat-icon">🍽️</div><div class="cat-name">على الطاولة</div></div>
+
+  <div class="tbl-label">🫘 فول ومسبحة</div>
   <div class="mi">
     <div><div class="mi-name">فول</div><div class="mi-desc">فول · حمص · تتبيلة المحمود · خضار · خبز · زيت</div></div>
     <span class="mi-price">٤٠٠،٠٠٠</span>
@@ -206,11 +269,8 @@ tbody tr:last-child td{border-bottom:none;}
     <div><div class="mi-name">حمص حب</div></div>
     <span class="mi-price">٤٠٠،٠٠٠</span>
   </div>
-</div>
 
-<!-- ── الفتة ── -->
-<div id="sec-fatte" class="section">
-  <div class="cat-hdr"><div class="cat-icon">🥣</div><div class="cat-name">الفتة</div></div>
+  <div class="tbl-label" style="margin-top:16px;">🥣 الفتة</div>
   <div class="mi"><div><div class="mi-name">فتة بدون قلوبات</div></div><span class="mi-price">٤٥٠،٠٠٠</span></div>
   <div class="mi"><div><div class="mi-name">فتة مع قلوبات</div></div><span class="mi-price">٥٠٠،٠٠٠</span></div>
   <div class="mi"><div><div class="mi-name">فتة مع لحمة وقلوبات</div></div><span class="mi-price">٧٠٠،٠٠٠</span></div>
@@ -220,6 +280,13 @@ tbody tr:last-child td{border-bottom:none;}
 <!-- ── ترويقة بلدية ── -->
 <div id="sec-terwi2a" class="section">
   <div class="cat-hdr"><div class="cat-icon">🍳</div><div class="cat-name">ترويقة بلدية</div></div>
+  <div class="mi" style="background:rgba(212,160,23,.06);border:1px solid rgba(212,160,23,.2);border-radius:12px;padding:12px;margin-bottom:6px;">
+    <div>
+      <div class="mi-name" style="color:var(--gold2);font-size:1rem;">⭐ صحن الضيعة</div>
+      <div class="mi-desc">جبنة حلوم · لبنة بلدية مدعبلة · مكدوس · خضار</div>
+    </div>
+    <span class="mi-price">٥٠٠،٠٠٠</span>
+  </div>
   <div class="mi"><div><div class="mi-name">صحن بيض</div></div><span class="mi-price">٤٠٠،٠٠٠</span></div>
   <div class="mi"><div><div class="mi-name">صحن بيض مع لحمة</div></div><span class="mi-price">٦٠٠،٠٠٠</span></div>
   <div class="mi"><div><div class="mi-name">جبنة مقلية</div></div><span class="mi-price">٤٥٠،٠٠٠</span></div>
@@ -229,7 +296,7 @@ tbody tr:last-child td{border-bottom:none;}
 
 <!-- ── أصناف العلب ── -->
 <div id="sec-3aleb" class="section">
-  <div class="cat-hdr"><div class="cat-icon">🥡</div><div class="cat-name">أصناف العلب</div></div>
+  <div class="cat-hdr"><div class="cat-icon">🥡</div><div class="cat-name">أصناف العلب take away</div></div>
 
   <div class="tbl-label">🫘 فول ومسبحة وحمص</div>
   <div class="tbl-wrap">
@@ -276,8 +343,39 @@ tbody tr:last-child td{border-bottom:none;}
   <div class="cat-hdr"><div class="cat-icon">🥤</div><div class="cat-name">مشروبات</div></div>
   <div class="drinks-grid">
     <div class="drink-pill">🥤<br>Pepsi</div>
-    <div class="drink-pill">☕<br>شاي</div>
     <div class="drink-pill">💧<br>مياه</div>
+    <div class="drink-pill">☕<br>شاي</div>
+  </div>
+</div>
+
+
+<!-- ── عروضات ── -->
+<div id="sec-3orod" class="section offers-section">
+  <div class="offers-header">
+    <div class="cat-icon" style="background:rgba(193,18,31,.2);border-color:rgba(193,18,31,.4);">🔥</div>
+    <div class="cat-name">عروضات خاصة</div>
+    <span class="offers-badge">لفترة محدودة</span>
+  </div>
+
+  <div class="offer-card">
+    <div class="offer-tag">👤 وجبة لشخص واحد</div>
+    <div class="offer-title">اختر طبقك المفضّل</div>
+    <div class="offer-choices">
+      <span class="choice-pill">فول</span>
+      <span class="choice-pill">مسبحة</span>
+      <span class="choice-pill">بليلة</span>
+      <span class="choice-pill">حمص بطحينة</span>
+    </div>
+    <div class="offer-includes">
+      <span class="include-item">🥗 خضرة</span>
+      <span class="include-item">🫓 خبز</span>
+      <span class="include-item">🫒 زيت</span>
+      <span class="include-item">✨ حر</span>
+      <span class="include-item">🥤 Pepsi</span>
+    </div>
+    <div class="offer-price-row" style="margin-top:14px;">
+      <span class="offer-new-price" style="font-size:1.1rem;">٥٠٠،٠٠٠ ل.ل.</span>
+    </div>
   </div>
 </div>
 
